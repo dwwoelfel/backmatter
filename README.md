@@ -1,16 +1,26 @@
 # backmatter
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+## Installation
 
-Describe backmatter here.
+```sh
+yarn add backmatter
+```
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+## Usage
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+```javascript
+import {removeBackmatter, extractBackmatter} from 'backmatter';
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+const md = `# Hello world
+
+\`\`\`backmatter
+{"meta": "data"}
+\`\`\`
+`;
+
+const backmatter = extractBackmatter(md);
+// backmatter = {meta: "data"}
+const removed = removeBackmatter(md);
+// removed = "# Hello world\n\n"
+
+```

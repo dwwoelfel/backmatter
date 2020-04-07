@@ -1,14 +1,10 @@
 {
   "name": "backmatter",
   "version": "1.0.0",
-  "description": "Describe backmatter here",
+  "description": "Markdown metadata for those times when frontmatter just won't do.",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
@@ -18,12 +14,16 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "remark-parse": ">7.0.0",
+    "remark-stringify": ">7.0.0",
+    "unified": ">7.0.0",
+    "unist-util-remove": "^2.0.0"
   },
   "devDependencies": {
     "nwb": "0.24.x"
   },
   "author": "",
-  "homepage": "",
+  "homepage": "https://github.com/dwwoelfel/backmatter",
   "license": "MIT",
-  "repository": ""
+  "repository": "https://github.com/dwwoelfel/backmatter.git"
 }
